@@ -31,7 +31,7 @@ namespace Week4.Api.Controllers
             }
             var activity = _mapper.Map<Activities>(paDto);
             if (activity == null)
-            {
+            { 
                 return BadRequest(CustomResponseDto<PostActivitiesDto>.Fail(400, "Error in mapping the user data."));
             }
             var createdActivity = await _service.AddAsync(activity);
